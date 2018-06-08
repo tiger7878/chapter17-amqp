@@ -1,0 +1,24 @@
+group 'demo'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+
+sourceCompatibility = 1.7
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.springframework:spring-context:$springVersion"
+    compile "org.springframework.amqp:spring-amqp:$springAMQPVersion"
+    compile "org.springframework.amqp:spring-rabbit:$springAMQPVersion"
+    compile "com.h2database:h2:$h2Version"
+    compile "javax.inject:javax.inject:1"
+
+    compile "org.apache.activemq:activemq-spring:$activeMQVersion"
+    compile "org.apache.xbean:xbean-spring:3.7"
+
+    testCompile "junit:junit-dep:$junitVersion"
+    testCompile "org.springframework:spring-test:$springVersion"
+}
