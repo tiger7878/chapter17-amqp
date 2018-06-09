@@ -6,7 +6,9 @@
              xsi:schemaLocation="http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <connection-factory id="connectionFactory" />
+    <connection-factory id="connectionFactory"
+                        username="test"
+                        password="test" />
 
     <admin connection-factory="connectionFactory" />
 
