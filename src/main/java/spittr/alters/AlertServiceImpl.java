@@ -15,12 +15,14 @@ public class AlertServiceImpl implements AlertService {
 
     @Override
     public void sendSpittleAlert(Spittle spittle) {
+        //发送消息
         rabbitTemplate.convertAndSend("spittle.alert.exchange","spittle.alerts",spittle);
     }
 
     @Override
     public Spittle receiveSpittleAlert() {
-        return null;
+        //同步接收消息
+        return (Spittle) rabbitTemplate.receiveAndConvert("spittle.alerts");
     }
 
 }

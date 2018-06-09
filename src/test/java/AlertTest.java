@@ -19,10 +19,18 @@ public class AlertTest {
     @Autowired
     private AlertService alertService;
 
+    //测试发送消息
     @Test
     public void sendSpittleAlert(){
         Spittle spittle = new Spittle(1L, "a", new Date());
         alertService.sendSpittleAlert(spittle);
+    }
+
+    //测试接收消息
+    @Test
+    public void receiveSpittleAlert(){
+        Spittle spittle = alertService.receiveSpittleAlert();
+        System.out.println(spittle.getMessage());
     }
 
 }
