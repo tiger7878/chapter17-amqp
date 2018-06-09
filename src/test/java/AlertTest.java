@@ -13,7 +13,7 @@ import java.util.Date;
  * Date: 2018-06-08 10:26
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:amqp-producer.xml")
+@ContextConfiguration({"classpath:amqp-producer.xml","classpath:amqp-consumer.xml"})
 public class AlertTest {
 
     @Autowired
@@ -22,7 +22,7 @@ public class AlertTest {
     //测试发送消息
     @Test
     public void sendSpittleAlert(){
-        Spittle spittle = new Spittle(1L, "a", new Date());
+        Spittle spittle = new Spittle(2L, "b", new Date());
         alertService.sendSpittleAlert(spittle);
     }
 
